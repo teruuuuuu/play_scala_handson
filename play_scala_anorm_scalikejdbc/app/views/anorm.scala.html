@@ -1,0 +1,26 @@
+@import helper._
+
+
+@import dto.RequestText
+
+@(requestTexts: Seq[RequestText])
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>anorm sample page</title>
+</head>
+<body>
+<span>this is anorm sample</span>
+<form method="post" action="anorm">
+    <input type="text" name="input_text" ></input><input type="submit" name="butto" value="送信" />
+</form>
+
+<ul>
+    @for(requestText <- requestTexts) {
+    <li>@requestText.id:  @requestText.input_text</li>
+    }
+</ul>
+</body>
+</html>

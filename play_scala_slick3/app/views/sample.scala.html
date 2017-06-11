@@ -1,0 +1,9 @@
+@import dto.User
+
+@(user: User)
+
+<span>this is twirl page</span>
+
+@defining(user.firstName + " " + user.lastName) { fullName =>
+<div>Hello @fullName</div>
+}

@@ -1,0 +1,29 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+
+GET      /test                       controllers.TestController.index
+GET      /greet                      controllers.TestController.greet
+POST     /jsonReq                    controllers.TestController.jsonReq
+POST     /jsonReq2                   controllers.TestController.jsonReq2
+POST     /jsonRes                    controllers.TestController.jsonRes
+GET      /sessionCount               controllers.TestController.sessionCount
+GET      /htmlTest                   controllers.TestController.htmlTest
+
+GET     /slick                       controllers.SlickController.list
+GET     /slickDb2                    controllers.SlickController.db2List
+GET     /find/:id                    controllers.SlickController.findById(id: Long)
+POST    /create                      controllers.SlickController.create
+POST    /update/:id                  controllers.SlickController.update(id: Long)
+POST    /delete/:id                  controllers.SlickController.delete(id: Long)
